@@ -1,0 +1,57 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f4f5f7;
+  color: #1d1f23;
+  line-height: 1.5;
+}
+header { background: #00599c; color: #fff; padding: 12px 16px; }
+header h1 { margin: 0 0 6px; font-size: 1.4rem; }
+.progress { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+.bar { flex: 1; height: 10px; background: rgba(255,255,255,0.3); border-radius: 5px; overflow: hidden; }
+#bar-fill { height: 100%; width: 0; background: #7fd67f; transition: width 0.3s; }
+
+main { display: flex; gap: 16px; max-width: 960px; margin: 0 auto; padding: 16px; }
+nav { flex: 0 0 200px; display: flex; flex-direction: column; gap: 6px; }
+nav button {
+  text-align: left; padding: 12px; border: 1px solid #ccd; border-radius: 6px;
+  background: #fff; font-size: 1rem; cursor: pointer;
+}
+nav button.active { border-color: #00599c; background: #e6f0f8; font-weight: 600; }
+nav button.done::after { content: " ✓"; color: #2e8b2e; }
+
+#lesson { flex: 1; background: #fff; border-radius: 8px; padding: 16px 20px; min-width: 0; }
+#lesson h2 { margin-top: 0; }
+pre {
+  background: #1e1e1e; color: #e6e6e6; padding: 14px; border-radius: 6px;
+  overflow-x: auto; font-size: 15px; line-height: 1.45;
+}
+code, pre, input[type=text] { font-family: Consolas, "Cascadia Mono", "Courier New", monospace; }
+
+.exercise { border-top: 1px solid #e3e3e3; padding-top: 12px; margin-top: 16px; }
+.exercise p { font-weight: 600; margin: 0 0 8px; }
+.options { display: flex; flex-direction: column; gap: 6px; }
+.options button, .exercise .check {
+  padding: 10px 12px; font-size: 1rem; border: 1px solid #ccd; border-radius: 6px;
+  background: #fafafa; cursor: pointer; text-align: left;
+}
+.options button.right { background: #d9f2d9; border-color: #2e8b2e; }
+.options button.wrong { background: #f8d7d7; border-color: #c0392b; }
+.answer-row { display: flex; gap: 8px; }
+.answer-row input { flex: 1; padding: 10px; font-size: 1rem; border: 1px solid #ccd; border-radius: 6px; min-width: 0; }
+.exercise .check { background: #00599c; color: #fff; border: none; text-align: center; }
+.feedback { margin-top: 6px; font-weight: 600; min-height: 1.5em; }
+.feedback.ok { color: #2e8b2e; }
+.feedback.bad { color: #c0392b; }
+.complete { margin-top: 16px; padding: 10px; background: #d9f2d9; border-radius: 6px; font-weight: 600; }
+
+footer { text-align: center; padding: 16px; }
+#reset { background: none; border: 1px solid #999; border-radius: 6px; padding: 8px 12px; cursor: pointer; }
+
+@media (max-width: 640px) {
+  main { flex-direction: column; padding: 10px; }
+  nav { flex: none; flex-direction: row; overflow-x: auto; }
+  nav button { flex: 0 0 auto; }
+  pre { font-size: 14px; }
+}
